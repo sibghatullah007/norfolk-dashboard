@@ -1,10 +1,14 @@
+'use client'
 import Image from 'next/image'
 import { FaSearch } from 'react-icons/fa'
 import { FaBell } from 'react-icons/fa'
+import NotificationMenu from './NotificationMenu';
+import { useContext } from 'react';
+import {AppContext} from '../context/index'
+
 const Navbar = () => {
-  const truncateText = (text, maxLength) => {
-    return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
-  };  
+
+      const {notificationNavMenu, setNotificationNavMenu, truncateText}  = useContext(AppContext)
   return (
     <div className='flex items-center justify-end md:justify-between p-4'>
       <div className="hidden md:flex items-center bg-white p-2 border rounded-full">
@@ -12,9 +16,10 @@ const Navbar = () => {
         <input type="text" placeholder='Search...' className='px-2 focus:outline-none focus:border-0' />
       </div>
       <div className='flex items-center gap-5'>
-        <div className='relative cursor-pointer'>
-          <FaBell className='text-xl text-blue-500' />
-          <span className='absolute bg-red-600 text-white px-2 -top-4 -right-3 py-1 rounded-full text-xs/[14px]'>2</span>
+        <div className='relative bg-blue-200 rounded-full p-1'>
+          <FaBell className='text-xl text-blue-500 cursor-pointer'  onClick={()=>{setNotificationNavMenu(!notificationNavMenu)}}/>
+          <span className='absolute bg-red-600 text-white top-0 right-0 p-1 rounded-full'></span>
+          <NotificationMenu/>
         </div>
         <div className='flex gap-2 items-center cursor-pointer'>
           <div className='flex flex-col -gap-1'>

@@ -41,9 +41,7 @@ const menuItems = [
 ]
 
 const Menu = () => {
-    const [activeUrl,setActiveUrl] = useState(false)
     const {pathname} = useContext(AppContext)
-    // console.log(pathname)
     return (
         <div className='mt-4 text-sm'>
             {
