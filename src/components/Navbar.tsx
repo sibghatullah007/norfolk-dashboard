@@ -7,8 +7,7 @@ import { useContext } from 'react';
 import {AppContext} from '../context/index'
 
 const Navbar = () => {
-
-      const {notificationNavMenu, setNotificationNavMenu, truncateText}  = useContext(AppContext)
+      const {notificationNavMenu, setNotificationNavMenu, truncateText, unreadNotification,notificationsData}  = useContext(AppContext)
   return (
     <div className='flex items-center justify-end md:justify-between p-4'>
       <div className="hidden md:flex items-center bg-white p-2 border rounded-full">
@@ -18,7 +17,7 @@ const Navbar = () => {
       <div className='flex items-center gap-5'>
         <div className='relative bg-blue-200 rounded-full p-1'>
           <FaBell className='text-xl text-blue-500 cursor-pointer'  onClick={()=>{setNotificationNavMenu(!notificationNavMenu)}}/>
-          <span className='absolute bg-red-600 text-white top-0 right-0 p-1 rounded-full'></span>
+          <span className={`absolute bg-red-600 text-white top-0 right-0 p-1 rounded-full ${notificationsData.length>0 && unreadNotification.includes(true)?'block':'hidden'}`}></span>
           <NotificationMenu/>
         </div>
         <div className='flex gap-2 items-center cursor-pointer'>

@@ -7,51 +7,8 @@ import { MdOutlineMessage } from "react-icons/md";
 
 
 const NotificationMenu = () => {
-    const { notificationNavMenu, setNotificationNavMenu, notificationNavMenuSub, setNotificationNavMenuSub, truncateText } = useContext(AppContext)
-    const [notificationsData, setNotificationsData] = useState([
-        {
-            title: "New Email is here",
-            subject: "A new email has been received from no reply means you can't reply to this source",
-            time: "16 Dec 2024",
-            readStatus: false
-        },
-        {
-            title: "New Email is here",
-            subject: "A new email has been received from no reply means you can't reply to this source",
-            time: "16 hours Ago",
-            readStatus: false
-        },
-        {
-            title: "New Email is here",
-            subject: "A new email has been received from no reply means you can't reply to this source",
-            time: "12 min Ago",
-            readStatus: false
-        },
-        {
-            title: "New Email is here",
-            subject: "A new email has been from",
-            time: "16 sec Ago",
-            readStatus: false
-        },
-        {
-            title: "New Email is here",
-            subject: "A new email has been received from no reply means you can't reply to this source",
-            time: "16 hours Ago",
-            readStatus: false
-        },
-        {
-            title: "New Email is here",
-            subject: "A new email has been received from no reply means you can't reply to this source",
-            time: "12 min Ago",
-            readStatus: true
-        },
-        {
-            title: "New Email is here",
-            subject: "A new email has been received",
-            time: "16 sec Ago",
-            readStatus: false
-        }
-    ])
+    const { notificationNavMenu, setNotificationNavMenu, notificationNavMenuSub, setNotificationNavMenuSub, truncateText, notificationsData, setNotificationsData, unreadNotification, setUnreadNotification } = useContext(AppContext)
+
     const handleNotificationClick = (index) => {
         const updatedNotifications = notificationsData.map((notification, i) =>
             i === index ? { ...notification, readStatus: true } : notification
