@@ -4,6 +4,7 @@ import { SlOptionsVertical } from "react-icons/sl";
 import { AppContext } from '../context/index'
 import { MdMarkEmailRead } from "react-icons/md";
 import { MdOutlineMessage } from "react-icons/md";
+import { FaTrash } from "react-icons/fa";
 
 
 const NotificationMenu = () => {
@@ -16,7 +17,7 @@ const NotificationMenu = () => {
         setNotificationsData(updatedNotifications);
     };
     return (
-        <div className={`absolute top-8 -left-24 ${notificationNavMenu ? 'flex flex-col' : 'hidden'} max-h-80 overflow-auto`}>
+        <div className={`absolute top-8 z-30 -left-24 ${notificationNavMenu ? 'flex flex-col' : 'hidden'} max-h-80 overflow-auto shadow-xl`}>
             <div id='targeted' className='flex justify-between items-center bg-blue-100 w-60 p-2 border-b-2 border-blue-300 z-10 sticky top-0'>
                 <div className='flex gap-2 items-center cursor-pointer'
                     onClick={() => {
@@ -27,21 +28,20 @@ const NotificationMenu = () => {
                         }));
 
                         setNotificationsData(updatedNotifications);
-                        console.log(updatedNotifications);
                     }} >
-                    <MdMarkEmailRead />
+                    <MdMarkEmailRead className='text-blue-950'/>
                     <span className='text-sm text-blue-950 underline decoration-3'>Mark all as read</span>
                 </div>
                 <div className='relative text-sm text-blue-950'>
                     <SlOptionsVertical className='cursor-pointer' onClick={() => { setNotificationNavMenuSub(!notificationNavMenuSub) }} />
-                    <div className={`absolute -left-44 z-20 ${notificationNavMenuSub ? 'flex' : 'hidden'}`}>
+                    <div className={`absolute -left-48 z-40 ${notificationNavMenuSub ? 'flex' : 'hidden'}`}>
                         <div id='targetedSub' className='flex justify-between items-center bg-blue-200 p-2 pe-10 border-b-2 border-blue-300'>
                             <div onClick={() => { setNotificationNavMenuSub(!notificationNavMenuSub) }}>
-                                <span className='text-sm text-blue-950 underline decoration-3 cursor-pointer' 
+                                <span className='flex gap-2 items-center text-sm text-blue-950 underline decoration-3 cursor-pointer text-nowrap' 
                                 onClick={() => { 
                                     setNotificationNavMenu(!notificationNavMenu) 
                                     setNotificationsData([])
-                                }} >Clear all notifications</span>
+                                }} ><FaTrash /> Clear all notifications</span>
                             </div>
                         </div>
                     </div>

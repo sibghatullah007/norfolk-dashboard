@@ -73,11 +73,9 @@ export const AppProvider = ({ children }) => {
       }))
     })
   },[notificationsData])
-  console.log(unreadNotification)
   useEffect(() => {
     const handleClick = (event) => {
       const targetElement = document.querySelector('#targeted');
-      console.log(event.target == targetElement)
       if (targetElement && targetElement.contains(event.target)) {
         setNotificationNavMenu(true);
       } else {

@@ -9,10 +9,10 @@ import {AppContext} from '../context/index'
 const Navbar = () => {
       const {notificationNavMenu, setNotificationNavMenu, truncateText, unreadNotification,notificationsData}  = useContext(AppContext)
   return (
-    <div className='flex items-center justify-end md:justify-between p-4'>
+    <div className='flex items-center justify-end md:justify-between p-4 shadow-sm'>
       <div className="hidden md:flex items-center bg-white p-2 border rounded-full">
         <FaSearch className='text-blue-500' />
-        <input type="text" placeholder='Search...' className='px-2 focus:outline-none focus:border-0' />
+        <input type="search" placeholder='Search...' className='px-2 focus:outline-none focus:border-0' />
       </div>
       <div className='flex items-center gap-5'>
         <div className='relative bg-blue-200 rounded-full p-1'>
