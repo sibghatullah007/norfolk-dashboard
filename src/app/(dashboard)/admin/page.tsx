@@ -3,6 +3,8 @@ import KPICard from "../../../components/KPICard"
 import DataTable from "../../..//components/DataTable";
 import { columns } from "./column";
 import LineChartComponent from "@/components/LineChart";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const AdminPage = () => {
   const rows = [
@@ -78,6 +80,62 @@ const AdminPage = () => {
       status: "Failed",
       actions: "View",
     },
+    {
+      contactName: "Michael Brown",
+      company: "Global Industries",
+      dateTime: "Jan 15, 2025 2:00 PM",
+      duration: "4:12",
+      status: "Failed",
+      actions: "View",
+    },
+    {
+      contactName: "Emily Davis",
+      company: "Innovatech",
+      dateTime: "Jan 15, 2025 9:45 AM",
+      duration: "6:10",
+      status: "Effective",
+      actions: "View",
+    },
+    {
+      contactName: "David Wilson",
+      company: "Bright Future LLC",
+      dateTime: "Jan 15, 2025 12:30 PM",
+      duration: "2:50",
+      status: "Voicemail",
+      actions: "View",
+    },
+    {
+      contactName: "Sophia Martinez",
+      company: "NextGen Solutions",
+      dateTime: "Jan 15, 2025 3:00 PM",
+      duration: "5:00",
+      status: "Failed",
+      actions: "View",
+    },
+    {
+      contactName: "James Lee",
+      company: "Tech World",
+      dateTime: "Jan 15, 2025 4:15 PM",
+      duration: "4:05",
+      status: "Effective",
+      actions: "View",
+    },
+    {
+      contactName: "Olivia Taylor",
+      company: "Visionary Inc",
+      dateTime: "Jan 15, 2025 1:10 PM",
+      duration: "3:30",
+      status: "Voicemail",
+      actions: "View",
+    },
+    {
+      contactName: "Daniel Garcia",
+      company: "Global Ventures",
+      dateTime: "Jan 15, 2025 11:45 AM",
+      duration: "4:45",
+      status: "Failed",
+      actions: "View",
+    },
   ];
 
   return (
@@ -93,11 +151,23 @@ const AdminPage = () => {
           <BarChartComponent />
         </div>
         <div className="w-full md:w-1/2 my-5 md:ps-2 h-full">
-          <LineChartComponent/>
+          <LineChartComponent />
         </div>
       </div>
       <div>
-        <DataTable data={rows} columns={columns}/>
+        <div className="rounded-md border h-full shadow-lg">
+          <div className='w-full rounded-lg rounded-b-none border-b-2 border-blue-200 bg-white p-3 py-4 flex justify-between items-center'>
+            <span className="text-blue-950 font-semibold">
+              Recent Calls
+            </span>
+            <div>
+              <Link href={'/calls'}>
+                <Button className='bg-blue-600 hover:bg-blue-800'>View All</Button>
+              </Link>
+            </div>
+          </div>
+          <DataTable data={rows} columns={columns} />
+        </div>
       </div>
     </div>
   )

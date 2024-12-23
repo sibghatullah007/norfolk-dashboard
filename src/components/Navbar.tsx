@@ -15,7 +15,7 @@ const Navbar = () => {
         <input type="search" placeholder='Search...' className='px-2 focus:outline-none focus:border-0' />
       </div>
       <div className='flex items-center gap-5'>
-        <div className='relative bg-blue-200 rounded-full p-1'>
+        <div className='relative bg-blue-200 rounded-full p-1 hover:bg-blue-300'>
           <FaBell className='text-xl text-blue-500 cursor-pointer'  onClick={()=>{setNotificationNavMenu(!notificationNavMenu)}}/>
           <span className={`absolute bg-red-600 text-white top-0 right-0 p-1 rounded-full ${notificationsData.length>0 && unreadNotification.includes(true)?'block':'hidden'}`}></span>
           <NotificationMenu/>

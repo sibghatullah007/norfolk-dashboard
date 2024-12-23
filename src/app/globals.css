@@ -61,7 +61,21 @@ body {
     --chart-5: 340 75% 55%;
   }
 }
+::-webkit-scrollbar {
+  width: 5px;
+}
 
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bae6fd;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7dd3fc;
+}
 @layer base {
   * {
     @apply border-border;
