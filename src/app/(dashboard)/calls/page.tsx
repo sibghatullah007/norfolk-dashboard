@@ -1,14 +1,14 @@
 'use client'
 import DataTable from "@/components/DataTable";
 import { columns } from "../admin/column";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { CiExport } from "react-icons/ci";
 import * as XLSX from 'xlsx';
 
 const CallsPage = () => {
   const rows = [
-    {
+    { 
+      id:1,
       contactName: "John Smith",
       company: "Acme Corp",
       dateTime: "2024-12-31",
@@ -16,7 +16,8 @@ const CallsPage = () => {
       status: "Effective",
       actions: "View",
     },
-    {
+    { 
+      id:2,
       contactName: "Sarah Johnson",
       company: "Tech Solutions",
       dateTime: "2024-11-31",
@@ -24,7 +25,8 @@ const CallsPage = () => {
       status: "Voicemail",
       actions: "View",
     },
-    {
+    { 
+      id:3,
       contactName: "Michael Brown",
       company: "Global Industries",
       dateTime: "2024-11-28",
@@ -32,7 +34,8 @@ const CallsPage = () => {
       status: "Failed",
       actions: "View",
     },
-    {
+    { 
+      id:4,
       contactName: "Emily Davis",
       company: "Innovatech",
       dateTime: "2024-11-18",
@@ -40,7 +43,8 @@ const CallsPage = () => {
       status: "Effective",
       actions: "View",
     },
-    {
+    { 
+      id:5,
       contactName: "David Wilson",
       company: "Bright Future LLC",
       dateTime: "2024-11-8",
@@ -48,7 +52,8 @@ const CallsPage = () => {
       status: "Voicemail",
       actions: "View",
     },
-    {
+    { 
+      id:6,
       contactName: "Sophia Martinez",
       company: "NextGen Solutions",
       dateTime: "2024-12-11",
@@ -56,7 +61,8 @@ const CallsPage = () => {
       status: "Failed",
       actions: "View",
     },
-    {
+    { 
+      id:7,
       contactName: "James Lee",
       company: "Tech World",
       dateTime: "2024-12-13",
@@ -64,7 +70,8 @@ const CallsPage = () => {
       status: "Effective",
       actions: "View",
     },
-    {
+    { 
+      id:8,
       contactName: "Olivia Taylor",
       company: "Visionary Inc",
       dateTime: "2024-11-31",
@@ -72,7 +79,8 @@ const CallsPage = () => {
       status: "Voicemail",
       actions: "View",
     },
-    {
+    { 
+      id:9,
       contactName: "Daniel Garcia",
       company: "Global Ventures",
       dateTime: "2024-12-28",
@@ -80,7 +88,8 @@ const CallsPage = () => {
       status: "Failed",
       actions: "View",
     },
-    {
+    { 
+      id:10,
       contactName: "Michael Brown",
       company: "Global Industries",
       dateTime: "2024-12-28",
@@ -88,7 +97,8 @@ const CallsPage = () => {
       status: "Effective",
       actions: "View",
     },
-    {
+    { 
+      id:11,
       contactName: "Emily Davis",
       company: "Innovatech",
       dateTime: "2024-11-18",
@@ -96,7 +106,8 @@ const CallsPage = () => {
       status: "Effective",
       actions: "View",
     },
-    {
+    { 
+      id:12,
       contactName: "David Wilson",
       company: "Bright Future LLC",
       dateTime: "2024-11-8",
@@ -104,7 +115,8 @@ const CallsPage = () => {
       status: "Voicemail",
       actions: "View",
     },
-    {
+    { 
+      id:13,
       contactName: "Sophia Martinez",
       company: "NextGen Solutions",
       dateTime: "2024-12-11",
@@ -112,7 +124,8 @@ const CallsPage = () => {
       status: "Failed",
       actions: "View",
     },
-    {
+    { 
+      id:14,
       contactName: "James Lee",
       company: "Tech World",
       dateTime: "2024-12-13",
@@ -120,7 +133,8 @@ const CallsPage = () => {
       status: "Effective",
       actions: "View",
     },
-    {
+    { 
+      id:15,
       contactName: "Olivia Taylor",
       company: "Visionary Inc",
       dateTime: "2024-12-24",
@@ -128,7 +142,8 @@ const CallsPage = () => {
       status: "Voicemail",
       actions: "View",
     },
-    {
+    { 
+      id:16,
       contactName: "Daniel Garcia",
       company: "Global Ventures",
       dateTime: "2024-12-17",
@@ -166,10 +181,8 @@ const CallsPage = () => {
               Recent Calls
             </span>
             <div>
-              <Link href={'/calls'}>
                 <Button onClick={()=>(exportToExcel(rows,columns))}
                  className='bg-blue-600 hover:bg-blue-800'><CiExport /> Export</Button>
-              </Link>
             </div>
           </div>
           <DataTable data={rows} columns={columns} filters={filters} />
