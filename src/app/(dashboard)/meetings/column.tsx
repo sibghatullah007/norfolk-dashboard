@@ -16,7 +16,7 @@ export const columns: ColumnDef<any>[] = [
           className="flex justif-start items-center cursor-pointer hover:bg-blue-100 w-fit py-2 px-1 rounded-lg"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Date and Time
+          Date
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </span>
       )
