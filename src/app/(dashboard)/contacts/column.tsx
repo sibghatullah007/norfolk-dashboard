@@ -12,7 +12,7 @@ export const columns: ColumnDef<any>[] = [
       accessorKey: "email",
       header: "Email",
       cell: ({ row }) => (
-        <a href={`mailto:${row.original.email}`} className="text-blue-500 hover:underline">
+        <a target="_blank" href={`mailto:${row.original.email}`} className="text-blue-500 hover:underline">
           {row.original.email}
         </a>
       ),
