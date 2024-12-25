@@ -1,5 +1,8 @@
 import React from "react";
 import * as Icons from "react-icons/fa6";
+import * as Iconsio from "react-icons/io5";
+import { BsGraphUpArrow } from "react-icons/bs";
+
 
 interface KPICardProps {
   range: string;
@@ -9,7 +12,7 @@ interface KPICardProps {
 }
 
 const KPICard: React.FC<KPICardProps> = ({ type, value, icon, range }) => {
-  const IconComponent = Icons[icon as keyof typeof Icons];
+  const IconComponent = Icons[icon as keyof typeof Icons] || Iconsio[icon as keyof typeof Iconsio] || BsGraphUpArrow;
 
   return (
     <div className="relative p-4 border rounded-lg shadow-lg flex items-center justify-between flex-1 even:bg-blue-100 odd:bg-blue-200">
