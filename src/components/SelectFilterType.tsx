@@ -6,13 +6,16 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
+import { AppContext } from "@/context"
+import { useContext } from "react"
 
 const SelectFilterType = () => {
+    const {EffectiveContactFilterType, setEffectiveContactFilterType} = useContext(AppContext)
     return (
         <div className="w-full px-0 md:px-1 my-2 md:my-0">
             <Select
                 onValueChange={(value) => {
-                    console.log("value Changed")
+                    setEffectiveContactFilterType(value)
                 }}
             >
                 <SelectTrigger className="w-full">

@@ -59,6 +59,8 @@ export const AppProvider = ({ children }) => {
       return false
     }
   }))
+  const [dateRange,setDateRange] = useState({from:undefined,to:undefined})
+  const [EffectiveContactFilterType, setEffectiveContactFilterType] = useState("month")
   const truncateText = (text, maxLength) => {
     return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
   };
@@ -101,6 +103,10 @@ export const AppProvider = ({ children }) => {
      setNotificationsData,
      unreadNotification, 
      setUnreadNotification, 
+     dateRange,
+     setDateRange,
+     EffectiveContactFilterType, 
+     setEffectiveContactFilterType,
      }}>
       {children}
     </AppContext.Provider>
